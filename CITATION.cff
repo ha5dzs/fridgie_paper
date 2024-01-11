@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this software separately from the paper."
+authors:
+- family-names: "Zoltan"
+  given-names: "Derzsi"
+  orcid: "https://orcid.org/0000-0002-4253-4209"
+- title: "My Research Software"
+doi:
+date-released: 2024-01-01
+url: "https://github.com/ha5dzs/fridgie_paper"
