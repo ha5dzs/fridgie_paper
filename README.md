@@ -3,8 +3,7 @@
 Zoltan Derzsi
 zd8 [at] nyu [?] edu
 
-New York University Abu Dhabi, United Arab Emirates
-Heaviside Instiitute
+New York University Abu Dhabi, United Arab Emirates; Heaviside Instiitute
 
 ## Abstract
 
@@ -44,7 +43,6 @@ In this paper, a simple and low cost independent early warning system is introdu
 
 ###### A note on why things are the way things are
 
-## References
 
 [^1]: Bardsley, D.: [Working from Home Could Create Surge in Gulf’s AC Bills and Emissions](https://www.thenationalnews.com/uae/environment/working-from-home-could-create-surge-in-gulf-s-ac-bills-and-emissions-1.1077001). The National, Accessed 23/10/2023
 
