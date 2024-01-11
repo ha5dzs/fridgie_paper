@@ -39,10 +39,25 @@ In this paper, a simple and low cost independent early warning system is introdu
 
 ## Discussion
 
-## Funding and acknowledgements
+## Acknowledgements, funding, and conflict of interest
+
+The author would like to thank Matthew Karau at the Engineering Design Studio and Professor Sunil Kumar, both at New York University Abu Dhabi for the stimulating discussions and for the provision of some of the tools and resources. The author would also like to thank New York University Abu Dhabi's Postdoctoral Preskilling Development Fund, for funding the TensorFlow training and certification process.
+
+The author would explicitly like not to thank the property maintenance companies, whom shall be not be named due to legal reasons, the author is stuck with. Their poor service practices caused the author's bedroom air conditioner to fail multiple times, which forced the author -among other things- to develop the EWS methodology and the initial data set described in this paper.
+
+The author has received no funding. The author declares no competing interest.
+
+## Data availability
+
+The code that generates the data and trains the neural network can be downloaded at:
+[https://github.com/ha5dzs/fridgie_paper](https://github.com/ha5dzs/fridgie_paper) Please cite the code as:
+
+```
+(add info here once its separate doi is ready)
+
+```
 
 ###### A note on why things are the way things are
-
 
 [^1]: Bardsley, D.: [Working from Home Could Create Surge in Gulf’s AC Bills and Emissions](https://www.thenationalnews.com/uae/environment/working-from-home-could-create-surge-in-gulf-s-ac-bills-and-emissions-1.1077001). The National, Accessed 23/10/2023
 
