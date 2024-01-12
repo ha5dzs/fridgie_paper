@@ -43,11 +43,11 @@ With the use of these five variables, it is possible to effectively monitor the 
 
 | Label | $t_{1}$ | $t_{2}$ | $t_{3}$ | $t_{4}$ | $d$ |
 |-------|---------|---------|---------|---------|-----|
-| Normal            | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0 % |
-| Low refrigerant   | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0 % |
-| Check air flow    | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0 % |
-| Check condenser   | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0 % |
-| High thermal load | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0 % |
+| Normal            | 0°C | 0°C | 0°C | 0°C | 0% |
+| Low refrigerant   | 0°C | 0°C | 0°C | 0°C | 0% |
+| Check air flow    | 0°C | 0°C | 0°C | 0°C | 0% |
+| Check condenser   | 0°C | 0°C | 0°C | 0°C | 0% |
+| High thermal load | 0°C | 0°C | 0°C | 0°C | 0% |
 
 _Table 1: EWS fault labels and sensor values. While these were obtained from a working system[^15], updating these values will be required to be changed appropriately for different devices due to variance in thermal capacity, materials used, installation conditions and sensor locations._
 
