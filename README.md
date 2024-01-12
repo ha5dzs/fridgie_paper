@@ -32,11 +32,11 @@ In this paper, a simple and low cost independent early warning system is introdu
 ## Methods
 
 While a state of the art FDD system for automotive applications uses 16 sensors in the refrigerant circuit itself[^14], the proposed system in this paper does not require invasive techniques to be installed. It only measures the temperatures at key points in the refrigeration circuit ($t_{1}-t_{3}$ across the condenser; $t_{2}-t_{4}$ across the evaporator) with temperature probes attached to the refrigerant lines. It also measures the compressor utilization rate or its duty cycle $(d)$, which can be done in many ways, such as with the use of inductive or probes or voltage indicators. See figure 1 for the sensor locations in a simple fixed metering device system.
-
+***
 ![Sensor locations in the refrigeration circuit: t1 and t3 are temperatures at the input and the output at the condenser, t2 and t4 are temperatures at the input and the output of the evaporator. Additionally, the compressor's utilisation rate or duty cycle d is also monitored. The EWS in this paper uses these five variables to detect problems before they escalate into catastrophic failure.](img/refrigerant_circuit.jpg "Sensor locations in the refrigeration circuit: t1 and t3 are temperatures at the input and the output at the condenser, t2 and t4 are temperatures at the input and the output of the evaporator. Additionally, the compressor's utilisation rate or duty cycle d is also monitored. The EWS in this paper uses these five variables to detect problems before they escalate into catastrophic failure.")
 
-*Figure 1: Sensor locations in the refrigeration circuit: $t_{1}$ and $t_{3}$ are temperatures at the input and the output at the condenser, $t_{2}$ and $t_{4}$ are temperatures at the input and the output of the evaporator. Additionally, the compressor's utilisation rate or duty cycle $d$ is also monitored. The EWS in this paper uses these five variables to detect problems before they escalate into catastrophic failure.*
-
+Figure 1: Sensor locations in the refrigeration circuit: $t_{1}$ and $t_{3}$ are temperatures at the input and the output at the condenser, $t_{2}$ and $t_{4}$ are temperatures at the input and the output of the evaporator. Additionally, the compressor's utilisation rate or duty cycle $d$ is also monitored. The EWS in this paper uses these five variables to detect problems before they escalate into catastrophic failure.
+***
 In case of refrigerant loss, the heat transfer overall reduces: to compensate for the reduced thermal capacity, the controller will increase the duty cycle of the compressor. Additionally, the temperature difference across the evaporator increases, but the same measure across the condenser decreases. In another case when there is reduced heat transfer at the evaporator due to poor air flow, the temperature difference across the evaporator reduces, and it increases across the condenser. Again, to compensate for the reduced thermal capacity, the controller increases the duty cycle of the compressor.
 
 With the use of these five variables, it is possible to effectively monitor the operating conditions of the air conditioner, and to detect sub-optimal operating conditions before they escalate into a catastrophic failure. A list of further conditions and example sensor data, obtained from a study where a working air conditioner had single faults induced at a time[^15], are shown in table 1.
@@ -62,10 +62,11 @@ In practice, for a particular manufacturer or installation, one would need to be
 ## Implementation and results
 
 The training and testing data was generated using Matlab: using the previously acquired temperatures and duty cycle values, the script rescales the sensor values for maximum dynamic range. Using these parameters, the data generator script creates Gaussian distributions with a high number of samples and exports the data. The generated data is used to train the neural network in a different script, which was written using Python, with the TensorFlow[^16] framework. It was trained with 75000 images, and achieved more than 99\% detection accuracy. A set of example images for each condition is shown in figure 2.
-
+***
 ![After rescaling the sensor data to fit the dynamic range of the 8-bit binary grayscale format used, each row represents a condition shown in table 1. The neural network is trained with this data and is doing image classification. In an embedded implementation, since the training data is already rescaled, the neural network can work with raw sensor values directly.](img/condition_codes.jpg "After rescaling the sensor data to fit the dynamic range of the 8-bit binary grayscale format used, each row represents a condition shown in table 1. The neural network is trained with this data and is doing image classification. In an embedded implementation, since the training data is already rescaled, the neural network can work with raw sensor values directly.")
 
 _Figure 2: After rescaling the sensor data to fit the dynamic range of the 8-bit binary grayscale format used, each row represents a condition shown in table 1. The neural network is trained with this data and is doing image classification. In an embedded implementation, since the training data is already rescaled, the neural network can work with raw sensor values directly._
+***
 
 ### Data generation and the machine learning model
 
