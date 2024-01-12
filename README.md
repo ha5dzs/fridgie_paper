@@ -35,7 +35,6 @@ While a state of the art FDD system for automotive applications uses 16 sensors 
 
 ![Sensor locations in the refrigeration circuit: t1 and t3 are temperatures at the input and the output at the condenser, t2 and t4 are temperatures at the input and the output of the evaporator. Additionally, the compressor's utilisation rate or duty cycle d is also monitored. The EWS in this paper uses these five variables to detect problems before they escalate into catastrophic failure.](img/refrigerant_circuit.jpg "Sensor locations in the refrigeration circuit: t1 and t3 are temperatures at the input and the output at the condenser, t2 and t4 are temperatures at the input and the output of the evaporator. Additionally, the compressor's utilisation rate or duty cycle d is also monitored. The EWS in this paper uses these five variables to detect problems before they escalate into catastrophic failure.")
 
-
 _Figure 1: Sensor locations in the refrigeration circuit: $t_{1}$ and $t_{3}$ are temperatures at the input and the output at the condenser, $t_{2}$ and $t_{4}$ are temperatures at the input and the output of the evaporator. Additionally, the compressor's utilisation rate or duty cycle $d$ is also monitored. The EWS in this paper uses these five variables to detect problems before they escalate into catastrophic failure._
 
 In case of refrigerant loss, the heat transfer overall reduces: to compensate for the reduced thermal capacity, the controller will increase the duty cycle of the compressor. Additionally, the temperature difference across the evaporator increases, but the same measure across the condenser decreases. In another case when there is reduced heat transfer at the evaporator due to poor air flow, the temperature difference across the evaporator reduces, and it increases across the condenser. Again, to compensate for the reduced thermal capacity, the controller increases the duty cycle of the compressor.
@@ -50,7 +49,7 @@ With the use of these five variables, it is possible to effectively monitor the 
 | Check condenser   | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0 % |
 | High thermal load | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0$^\circ$C | 0 % |
 
-_Table 1: EWS fault labels and sensor values. While these were obtained from a working system[^15], updating these values will be required to be changed appropriately for different devices due to variance in thermal capacity, materials used, installation conditions and sensor locations.
+_Table 1: EWS fault labels and sensor values. While these were obtained from a working system[^15], updating these values will be required to be changed appropriately for different devices due to variance in thermal capacity, materials used, installation conditions and sensor locations._
 
 ### Data processing: traditional statistics and machine learning
 
