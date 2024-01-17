@@ -4,3 +4,4 @@ fridgie_data_training
 use_this_in_the_tensorflow_code.zip
 .DS_Store
 condition_figure.png
+*.asv
