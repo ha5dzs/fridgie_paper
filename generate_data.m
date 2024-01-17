@@ -47,21 +47,52 @@ absolute_maximum_temp = 80; % This will be 1
 
 % IMPORTANT: CHANGE THESE TO YOUR SYSTEM! YOU NEED TO MEASURE THIS ON YOUR OWN!
 % The order of the data ia as per the labels specified above.
+% 
+% t1_means = [60; 45; 55; 65; 40; 65];
+% t1_standard_deviations = [2; 2; 2; 2; 0.1; 2];
+% 
+% t3_means = [48; 40; 45; 60; 40; 45];
+% t3_standard_deviations = [2; 2; 2; 2; 0.1; 2];
+% 
+% t2_means = [4; 0; 4; 15; 35; 4];
+% t2_standard_deviations = [2; 2; 2; 2; 0.1; 2];
+% 
+% t4_means = [8; 15; 5; 30; 30; 20];
+% t4_standard_deviations = [2; 2; 2; 2; 0.1; 2];
+% 
+% d_means = [0.5; 1; 0.8; 0.3; 1; 1];
+% d_standard_deviations = [0.1; 0.01; 0.05; 0.06; 0.01; 0.04];
+
+% Following on from reviewers, these numbers came from: 
+% Kim, M., Payne, W. V., Domanski, P. A., Yoon, S. H., & Hermes, C. J. (2009).
+% Performance of a residential heat pump operating in the cooling mode with single faults imposed.
+% Applied thermal engineering, 29(4), 770-778.
+% https://doi.org/10.1016/j.applthermaleng.2008.04.009
+% ...at around 10-20% fault, wherever it's the earliest. What they call 'restriction', I call 'high_heatload'.
+% Normal conditions (fig 2): 10-15° superheat, similar subcooling. Evaporator is 4 °C, condenser is 50°C. 
+
+% NOTE:
+% The standard deviations for the data set have been increased.
+% This was done so that the neual network can be more sensitive.
+
+% As a reminder, the values in the vectors below correspond to:
+% | Normal | Low refrigerant | Check airflow | Check condenser | Check compressor | High heatload |
 
 t1_means = [60; 45; 55; 65; 40; 65];
-t1_standard_deviations = [2; 2; 2; 2; 0.1; 2];
+t1_standard_deviations = [1.5; 1.5; 1.5; 1.5; 0.1; 1.5];
 
 t3_means = [48; 40; 45; 60; 40; 45];
-t3_standard_deviations = [2; 2; 2; 2; 0.1; 2];
+t3_standard_deviations = [1.5; 1.5; 1.5; 1.5; 0.1; 1.5];
 
 t2_means = [4; 0; 4; 15; 35; 4];
-t2_standard_deviations = [2; 2; 2; 2; 0.1; 2];
+t2_standard_deviations = [1.5; 1.5; 1.5; 1.5; 0.1; 1.5];
 
 t4_means = [8; 15; 5; 30; 30; 20];
-t4_standard_deviations = [2; 2; 2; 2; 0.1; 2];
+t4_standard_deviations = [[1.5; 1.5; 1.5; 1.5; 0.1; 1.5];
 
 d_means = [0.5; 1; 0.8; 0.3; 1; 1];
 d_standard_deviations = [0.1; 0.01; 0.05; 0.06; 0.01; 0.04];
+
 
 
 % Sanity checks!
