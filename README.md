@@ -1,4 +1,4 @@
-# An early warning system for air conditioners using simple machine learning to minimise maintenance costs and environmental impact
+# A simple early warning system for air conditioners using machine learning to minimise maintenance costs and environmental impact
 
 [Zoltan Derzsi](https://orcid.org/0000-0002-4253-4209)
 zd8 [at] nyu [?] edu
