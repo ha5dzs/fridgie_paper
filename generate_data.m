@@ -78,19 +78,74 @@ absolute_maximum_temp = 80; % This will be 1
 % As a reminder, the values in the vectors below correspond to:
 % | Normal | Low refrigerant | Check airflow | Check condenser | Check compressor | High heatload |
 
-t1_means = [60; 45; 55; 65; 40; 65];
+% Normal operation:
+t1_means(1, 1) = 60; % At the input of the condenser
+t3_means(1, 1) = 40; % At the output of the condenser
+t2_means(1, 1) =  4; % At the input of the evaporator
+t4_means(1, 1) = 14; % At the output of the evaporator
+d_means(1, 1) = 0.3; % Compressor utilisation rate
+
+% Low refrigerant:
+%   Superheat increases, subcooling decreases, compressor works harder.
+%   Heat exchanger inputs are colder
+% Kim et al 2009, Figure 7, 10% fault level
+t1_means(2, 1) = 50; % At the input of the condenser
+t3_means(2, 1) = 40; % At the output of the condenser
+t2_means(2, 1) =  0; % At the input of the evaporator
+t4_means(2, 1) = 15; % At the output of the evaporator
+d_means(2, 1) = 0.7; % Compressor utilisation rate
+
+% Check airflow (at the evaporator):
+%   Superheat decreases, subcooling increases, compressor works harder.
+%   Low heat transfer at the evaporator, lots of heat at the condenser
+% Kim et al 2009, Figure 5, 20% fault level
+t1_means(3, 1) = 70; % At the input of the condenser
+t3_means(3, 1) = 55; % At the output of the condenser
+t2_means(3, 1) =  4; % At the input of the evaporator
+t4_means(3, 1) =  8; % At the output of the evaporator
+d_means(3, 1) = 0.7; % Compressor utilisation rate
+
+% Check condenser:
+%   Superheat increases, subcooling decreases, compressor works harder.
+%   Low heat transfer at the condenser, evaporator not cold enough
+% Kim et al 2009, Figure 4, 20% fault level
+t1_means(4, 1) = 70; % At the input of the condenser
+t3_means(4, 1) = 65; % At the output of the condenser
+t2_means(4, 1) = 10; % At the input of the evaporator
+t4_means(4, 1) = 15; % At the output of the evaporator
+d_means(4, 1) = 0.7; % Compressor utilisation rate
+
+% Check compressor:
+%   This one is the easiest, no pumping action, controller pushes the poor thing hard
+t1_means(5, 1) = 45; % At the input of the condenser
+t3_means(5, 1) = 40; % At the output of the condenser
+t2_means(5, 1) = 15; % At the input of the evaporator
+t4_means(5, 1) = 25; % At the output of the evaporator
+d_means(5, 1) =   1; % Compressor utilisation rate
+
+% High heatload:
+%   Superheat increases, subcooling increases, compressor works harder.
+%   Massive amount of heat exchange at both ends.
+% Kim et al 2009, Figure 6, 10% fault level
+t1_means(6, 1) = 65; % At the input of the condenser
+t3_means(6, 1) = 40; % At the output of the condenser
+t2_means(6, 1) =  4; % At the input of the evaporator
+t4_means(6, 1) = 20; % At the output of the evaporator
+d_means(6, 1) = 0.7; % Compressor utilisation rate
+
+
+% The RMS errors are given for everything in Table 4.
+% I increased these, to create noisier data.
+% Effectively, I quadrupled noise levels.
+
 t1_standard_deviations = [1.5; 1.5; 1.5; 1.5; 0.1; 1.5];
 
-t3_means = [48; 40; 45; 60; 40; 45];
 t3_standard_deviations = [1.5; 1.5; 1.5; 1.5; 0.1; 1.5];
 
-t2_means = [4; 0; 4; 15; 35; 4];
 t2_standard_deviations = [1.5; 1.5; 1.5; 1.5; 0.1; 1.5];
 
-t4_means = [8; 15; 5; 30; 30; 20];
-t4_standard_deviations = [[1.5; 1.5; 1.5; 1.5; 0.1; 1.5];
+t4_standard_deviations = [1.5; 1.5; 1.5; 1.5; 0.1; 1.5];
 
-d_means = [0.5; 1; 0.8; 0.3; 1; 1];
 d_standard_deviations = [0.1; 0.01; 0.05; 0.06; 0.01; 0.04];
 
 

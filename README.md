@@ -43,17 +43,18 @@ With the use of these five variables, it is possible to effectively monitor the 
 
 | Label | $t_{1}$ | $t_{2}$ | $t_{3}$ | $t_{4}$ | $d$ |
 |-------|---------|---------|---------|---------|-----|
-| Normal            | 0°C | 0°C | 0°C | 0°C | 0% |
-| Low refrigerant   | 0°C | 0°C | 0°C | 0°C | 0% |
-| Check air flow    | 0°C | 0°C | 0°C | 0°C | 0% |
-| Check condenser   | 0°C | 0°C | 0°C | 0°C | 0% |
-| High thermal load | 0°C | 0°C | 0°C | 0°C | 0% |
+| Normal            | 60°C | 40°C | 4°C | 14°C | 30% |
+| Low refrigerant   | 50°C | 40°C | 0°C | 15°C | 70% |
+| Check air flow    | 70°C | 55°C | 4°C | 8°C | 70% |
+| Check condenser   | 70°C | 65°C | 10°C | 15°C | 70% |
+| Check compressor  | 45°C | 40°C | 15°C | 25°C | 100% |
+| High thermal load | 65°C | 40°C | 4°C | 20°C | 70% |
 
 _Table 1: EWS fault labels and sensor values. While these were obtained from a working system, and from a study where single faults were induced[^18], updating these values will be required to be changed appropriately for different devices due to variance in thermal capacity and materials used. See figure 1 for sensor locations._
 
 ### Data processing: traditional statistics and machine learning
 
-In this EWS, the five variables described above are used to describe the overall status of the refrigeration circuit inside the air conditioner. One might be tempted to simplify this, by simply taking the temperature differences across the coils into account for instance. Unfortunately, the temperature difference information at the heat exchangers alone would not provide enough information to reach an accurate conclusion: the temperature difference at the condenser and the evaporator can be similar at the "Low refrigerant" and "Check condenser" conditions. Statistically, it would be possible to separate these two conditions with different heat exchanger models, but without access to the pressure sensor data to calculate superheat and subcooling, the statistical model would be complex and computationally intensive[^19][^20]. Additionally, the increased complexity of this statistical model would require additional computational resources, which would make it difficult to be implemented with low-cost microcontroller systems.
+In this EWS, the five variables described above are used to describe the overall status of the refrigeration circuit inside the air conditioner. One might be tempted to simplify this, by simply taking the temperature differences across the coils into account for instance. Unfortunately, the temperature difference information at the heat exchangers alone would not provide enough information to reach an accurate conclusion: the temperature difference at the condenser and the evaporator can be similar at the "Low refrigerant" and "Check condenser" conditions. Statistically, it would be possible to separate these two conditions with different heat exchanger models, but without access to the pressure sensor data to calculate superheat and subcooling, the statistical model would be complex and computationally intensive[^19][^20]. Additionally, the increased complexity of this statistical model would would make it difficult to be implemented with low-cost microcontroller systems.
 
 Instead, rather than looking at a statistical model created from the five individual variables, it more sensible to concatenate the sensor data into a five element vector or represent it as a five-by-one pixel image after appropriate rescaling. Since there are only a handful of labels in table 1, and the number of pixels are very low when compared with computer vision applications, a very small neural network can be trained to reliably recognize the contents of this image. In this implementation, the labels of these images will correspond to the problem detected based on sensor data. An added benefit of the neural network application is that it can be trained with purely synthetic data prior to installation, and the trained model can be fine-tuned or even retrained during or after installation.
 
@@ -63,7 +64,7 @@ In practice, for a particular manufacturer or installation, one would need to be
 
 The training and testing data was generated using Matlab: using the previously acquired temperatures and duty cycle values, the script rescales the sensor values for maximum dynamic range. Using these parameters, the data generator script creates Gaussian distributions with a high number of samples and exports the data. The generated data is used to train the neural network in a different script, which was written using Python, with the TensorFlow[^21] framework. It was trained with 75000 images, and achieved more than 99\% detection accuracy. A set of example images for each condition is shown in figure 2.
 ***
-![After rescaling the sensor data to fit the dynamic range of the 8-bit binary grayscale format used, each row represents a condition shown in table 1. The neural network is trained with this data and is doing image classification. In an embedded implementation, since the training data is already rescaled, the neural network can work with raw sensor values directly.](img/condition_codes.jpg "After rescaling the sensor data to fit the dynamic range of the 8-bit binary grayscale format used, each row represents a condition shown in table 1. The neural network is trained with this data and is doing image classification. In an embedded implementation, since the training data is already rescaled, the neural network can work with raw sensor values directly.")
+![After rescaling the sensor data to fit the dynamic range of the 8-bit binary grayscale format used, each row represents a condition shown in table 1. The neural network is trained with this data and is doing image classification. In an embedded implementation, since the training data is already rescaled, the neural network can work with raw sensor values directly.](img/condition_codes.png "After rescaling the sensor data to fit the dynamic range of the 8-bit binary grayscale format used, each row represents a condition shown in table 1. The neural network is trained with this data and is doing image classification. In an embedded implementation, since the training data is already rescaled, the neural network can work with raw sensor values directly.")
 
 _Figure 2: After rescaling the sensor data to fit the dynamic range of the 8-bit binary grayscale format used, each row represents a condition shown in table 1. The neural network is trained with this data and is doing image classification. In an embedded implementation, since the training data is already rescaled, the neural network can work with raw sensor values directly._
 ***
