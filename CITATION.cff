@@ -4,7 +4,7 @@ authors:
 - family-names: "Zoltan"
   given-names: "Derzsi"
   orcid: "https://orcid.org/0000-0002-4253-4209"
-- title: "My Research Software"
+- title: "A simple early warning system for air conditioners using machine learning to minimise maintenance costs and environmental impact (supplementary material)"
 doi:
 date-released: 2022-11-15
 url: "https://github.com/ha5dzs/fridgie_paper"
