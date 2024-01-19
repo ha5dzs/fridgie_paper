@@ -13,7 +13,7 @@ In hot climate countries, a high proportion of energy produced is used up for ai
 
 air conditioning, machine learning, mini split, failure detection, diagnostics, early warning
 
-## Intorduction
+## Introduction
 
 The ductless split air conditioner is a popular choice for residential applications. In a hot desert climate country such as the United Arab Emirates (UAE), it was reported in nationwide media that as much as 70\% of the energy produced is used for air conditioning[^1]. Since the air conditioner is one of the highest power domestic appliances in a typical UAE home, maintaining it becomes very important in order to keep their coefficient-of-performance (COP) values as specified by the manufacturer. In the home, the responsibility of maintenance falls to the owner, but in the vast majority of cases a technician is only called when the air conditioner stops working completely[^2]. By this point, catastrophic damage has almost certainly occurred, and the only way to repair is through replacing major components. Perhaps, since air conditioners are sold in electronics stores and hypermarkets, the owners do not consider them as mechanical devices that require regular maintenance, but as electronic devices that have a fixed albeit short lifespan, after which replacement is considered more economical than repair[^3][^4]. However, realistically, the air conditioner, along with all white goods that use a refrigeration circuit, such as dehumidifiers, clothes driers with heat pumps, refrigerators and freezers, should be considered mechanical devices that require regular maintenance.
 
