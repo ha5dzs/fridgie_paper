@@ -106,6 +106,8 @@ The code that generates the data and trains the neural network can be downloaded
 
 ###### A note on why things are the way things are
 
+## References
+
 [^1]: Bardsley, D.: [Working from Home Could Create Surge in Gulf’s AC Bills and Emissions](https://www.thenationalnews.com/uae/environment/working-from-home-could-create-surge-in-gulf-s-ac-bills-and-emissions-1.1077001). The National, Accessed 23/10/2023
 
 [^2]: Breuker, M. S., & Braun, J. E. (1998). Common faults and their impacts for rooftop air conditioners. Science and Technology for the Built Environment, 4(3), 303. [https://doi.org/10.1080/10789669.1998.10391406](https://doi.org/10.1080/10789669.1998.10391406)
