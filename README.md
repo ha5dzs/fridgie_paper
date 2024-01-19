@@ -124,7 +124,7 @@ The code that generates the data and trains the neural network can be downloaded
 
 [^9]: [Stouppe, D. E., & Lau, Y. S. (1989). Air conditioning and refrigeration equipment failures. National Engineer, 93(9), 14-17.](https://scholar.google.com/scholar?hl=hu&as_sdt=0%2C5&q=touppe%2C+D.%2C+Lau%2C+Y.%3A+Air+conditioning+and+refrigeration+equipment+failures.+National+Engineer+93%289%29%2C+14%E2%80%9317+%281989%29&btnG=)
 
-[^10]: Rogers, A. P., Guo, F., & Rasmussen, B. P. (2019). A review of fault detection and diagnosis methods for residential air conditioning systems. Building and Environment, 161, 106236. [https://doi.org/10.1016/j.buildenv.2019.106236]https://doi.org/10.1016/j.buildenv.2019.106236)
+[^10]: Rogers, A. P., Guo, F., & Rasmussen, B. P. (2019). A review of fault detection and diagnosis methods for residential air conditioning systems. Building and Environment, 161, 106236. [https://doi.org/10.1016/j.buildenv.2019.106236](https://doi.org/10.1016/j.buildenv.2019.106236)
 
 [^11]: Hu, M., Chen, H., Shen, L., Li, G., Guo, Y., Li, H., ... & Hu, W. (2018). A machine learning bayesian network for refrigerant charge faults of variable refrigerant flow air conditioning system. Energy and Buildings, 158, 668-676. [https://doi.org/10.1016/j.enbuild.2017.10.012](https://doi.org/10.1016/j.enbuild.2017.10.012)
 
