@@ -7,7 +7,7 @@ New York University Abu Dhabi, United Arab Emirates; Heaviside Instiitute
 
 ## Abstract
 
-In hot climate countries, a high proportion of energy produced is used up for air conditioning. Since homeowners cannot always recognize when their air conditioners are losing efficiency, several faults remain undetected until catastrophic failure occurs. Here, a low-cost n early warning system is presented that only measures the temperatures at key locations of the refrigeration circuit along with the utilization rate of the system. A neural network is trained to recognize early signs of failure, and the trained model is small enough to fit in a microcontroller. Such a system can help not only with preventing excessive energy consumption prior to complete failure, but can also reduce the amount of refrigerant leaked into the atmosphere.
+In hot climate countries, a high proportion of energy produced is used up for air conditioning. Since homeowners cannot always recognize when their air conditioners are losing efficiency, several faults remain undetected until catastrophic failure occurs. Here, a low-cost early warning system is presented that only measures the temperatures at key locations of the refrigeration circuit along with the utilization rate of the system. A neural network is trained to recognize early signs of failure, and the trained model is small enough to fit in a microcontroller. Such a system can help not only with preventing excessive energy consumption prior to complete failure, but can also reduce the amount of refrigerant leaked into the atmosphere.
 
 ### Keywords
 
